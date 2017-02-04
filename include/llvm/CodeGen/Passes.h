@@ -399,6 +399,9 @@ namespace llvm {
 
   /// This pass frees the memory occupied by the MachineFunction.
   FunctionPass *createFreeMachineFunctionPass();
+
+  // Atomicize pass for GHUMVEE
+  ModulePass *createAtomicizePass();
 } // End llvm namespace
 
 /// Target machine pass initializer for passes with dependencies. Use with

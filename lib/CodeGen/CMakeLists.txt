@@ -1,4 +1,5 @@
 add_llvm_library(LLVMCodeGen
+  Atomicize.cpp
   AggressiveAntiDepBreaker.cpp
   AllocationOrder.cpp
   Analysis.cpp
