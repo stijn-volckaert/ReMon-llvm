@@ -44,6 +44,8 @@ private:
   bool HasSideEffects;
   bool IsAlignStack;
   AsmDialect Dialect;
+  bool HaveAtomicOperand;
+  unsigned AtomicOperand;
 
   InlineAsm(FunctionType *Ty, const std::string &AsmString,
             const std::string &Constraints, bool hasSideEffects,
@@ -68,6 +70,10 @@ public:
   bool hasSideEffects() const { return HasSideEffects; }
   bool isAlignStack() const { return IsAlignStack; }
   AsmDialect getDialect() const { return Dialect; }
+
+	bool haveAtomicOperand() const { return HaveAtomicOperand; }
+    unsigned getAtomicOperand() const { return AtomicOperand; }
+    void setAtomicOperand(unsigned i) { AtomicOperand = i; HaveAtomicOperand = true; }
 
   /// getType - InlineAsm's are always pointers.
   ///
